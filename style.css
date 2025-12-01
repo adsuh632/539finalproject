@@ -40,6 +40,13 @@ body {
   color: #e79abf;
 }
 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: white;
+}
+
 .main-nav {
   display: flex;
   justify-content: center;
@@ -256,7 +263,7 @@ main#content {
 }
 
 .site-footer {
-  background: linear-gradient(180deg, rgba(219, 36, 36, 0.04), rgba(239,239,239,0.06));
+  background: #ffffff;
   color: #c71068;
   padding: 1rem 1.25rem;
   text-align: center;
@@ -276,8 +283,8 @@ main#content {
 
 @media (prefers-color-scheme: dark) {
   .site-footer {
-    background: rgba(0,0,0,0.35);
-    border-top-color: rgba(255,255,255,0.06);
+    background: #ffffff;
+    border-top-color: rgba(0,0,0,0.06);
   }
 }
 
@@ -664,6 +671,10 @@ main#content {
 .white-section #places-heading {
   color: #222222;
   font-weight: 700;
+}
+
+#places-heading {
+  scroll-margin-top: 72px;
 }
 
 .white-section .places-desc {
