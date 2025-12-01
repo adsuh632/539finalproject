@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Next? — Ashley Around the World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#content">Skip to main content</a>
+    <header class="site-header">
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="404.html">Gallery</a></li>
+                <li><a href="next.html">Where Next</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content">
+        <section class="hero next-hero" aria-label="Site hero">
+        </section>
+        <section class="where-form" aria-label="Suggest a destination">
+            <div class="form-grid">
+                <div class="form-inner">
+                    <h1>Where Next? Suggest a place</h1>
+                    <form id="suggest-form" class="suggest-form" novalidate>
+                    <label for="s-name">Your name
+                        <input id="s-name" name="name" type="text" required>
+                    </label>
+
+                    <label for="s-email">Email
+                        <input id="s-email" name="email" type="email" required>
+                    </label>
+
+                    <label for="s-dest">Destination
+                        <input id="s-dest" name="destination" type="text" placeholder="City or country" required>
+                    </label>
+                    <label for="s-time">Timeframe
+                        <select id="s-time" name="timeframe">
+                            <option value="any">Anytime</option>
+                            <option value="soon">Next month</option>
+                            <option value="this_year">This year</option>
+                            <option value="future">Sometime later</option>
+                        </select>
+                    </label>
+                    <label for="s-notes">Notes
+                        <textarea id="s-notes" name="notes" rows="4" placeholder="Why should I go?"></textarea>
+                    </label>
+                    <div class="form-actions">
+                        <button type="submit">Send suggestion</button>
+                        <div id="form-message" role="status" aria-live="polite"></div>
+                    </div>
+                </form>
+                </div>
+
+                <aside class="submissions-panel" aria-label="Submitted suggestions">
+                    <h2>Suggestions</h2>
+                    <div id="submissions" class="submissions" aria-live="polite"></div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>© <span id="year"></span> Ashley Around the World — Built with ♥</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
