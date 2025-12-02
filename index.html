@@ -7,129 +7,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.20)), url('./images/IMG_3114.jpeg') center/cover no-repeat fixed;">
-    <a class="skip-link" href="#content">Skip to main content</a>
+    <a class="skip-link" href="#travel-snapshot">Skip to Main</a>
     <header class="site-header">
         <nav class="main-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="places.html">Travel</a></li>
                 <li><a href="404.html">Gallery</a></li>
                 <li><a href="next.html">Where Next</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="content">
-        <section class="hero" aria-label="Site hero">
-                <div class="hero-inner">
-                <h1>ASHLEY'S TRAVEL DIARY</h1>
-                <h2 class="intro">Going Around the World One Country at a Time</h2>
-            </div>
-        </section>
-        </main>
-
-        <section class="white-section" aria-labelledby="places-heading">
-            <div class="white-inner">
-                <section class="hero places-hero" aria-label="Places">
-                    <div class="hero-inner">
-                        <h2 id="places-heading">Where have I been?</h2>
-                        <p class="places-desc">These are all the countries and cities I've visited so far — a quick overview of my travels. Explore each card below to read short notes and highlights from each place.</p>
-
-                        <div class="places-stats" aria-hidden="false" data-countries="6" data-cities="12">
-                            <div class="stat" title="Unique countries visited">
-                                <div class="stat-number" id="countries-count" aria-live="polite">0</div>
-                                <div class="stat-label">Countries</div>
+    <main id="content" class="snapshot-section">
+                <section class="hero" aria-label="Site hero">
+                                <div class="hero-inner">
+                                <h1>ASHLEY'S TRAVEL DIARY</h1>
+                                <h2 class="intro">Going Around the World One City at a Time</h2>
+                        </div>
+                </section>
+                <section class="full-white-section">
+                    <div class="white-inner">
+                        <h2 id="travel-snapshot" class="white-grid-heading">Travel Snapshot</h2>
+                        <div class="white-grid" role="list">
+                            <div class="grid-item" role="listitem">
+                                <strong>6</strong>
+                                <div>Countries</div>
                             </div>
-                            <div class="stat" title="Unique cities visited">
-                                <div class="stat-number" id="cities-count" aria-live="polite">0</div>
-                                <div class="stat-label">Cities</div>
+                            <div class="grid-item" role="listitem">
+                                <strong>13</strong>
+                                <div>Cities</div>
+                            </div>
+                            <div class="grid-item" role="listitem">
+                                <strong>24</strong>
+                                <div>Trips</div>
+                            </div>
+                            <div class="grid-item" role="listitem">
+                                <strong>35k</strong>
+                                <div>Miles</div>
+                            </div>
+                            <div class="grid-item" role="listitem">
+                                <strong>3</strong>
+                                <div>Continents</div>
+                            </div>
+                            <div class="grid-item" role="listitem">
+                                <strong>8</strong>
+                                <div>Airports</div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <div class="places-cards">
-                    <article class="place-card" tabindex="0" data-country="USA" data-city="Los Angeles" data-images="./images/la/hollywood.jpg, ./images/la/IMG_5005.jpeg, ./images/la/IMG_6873.jpg, ./images/la/IMG_7523.jpg, ./images/la/IMG_7665.jpg, ./images/la/IMG_7952.jpg, ./images/la/IMG_8033.jpg, ./images/la/IMG_8191.jpg, ./images/la/IMG_8292.jpg" data-image-captions="Hollywood Sign, Clubbing with Kimmy in LA, Newspaper stand in Larchmont, Made candles in Culver City, KCON LA 2025, Sunset over LA, Din Tai Fung, Seco my favorite Silverlake Bar, Eating good">
-                        <img id="first-place-img" tabindex="-1" src="./images/la/hollywood.jpg" alt="Hollywood Sign, Los Angeles">
-                        <div class="card-body">
-                            <h3>California - My Hometown</h3>
-                            <p>Los Angeles & Santa Cruz</p>
-                        </div>
-                    </article>
-                    <article class="place-card" tabindex="0" data-country="USA" data-city="Ann Arbor" data-images="./images/AA/IMG_8738.jpg, ./images/AA/IMG_1559.jpg, ./images/AA/IMG_5486.jpeg, ./images/AA/IMG_8288.jpeg, ./images/AA/IMG_8546.jpg, ./images/AA/IMG_8821.jpg, ./images/AA/IMG_9037.jpg, ./images/AA/IMG_9040.jpg, ./images/AA/IMG_9300.jpg, ./images/AA/IMG_9769.jpg, ./images/AA/8691191D-994C-42A3-AE22-30205EAE4585.jpg, ./images/AA/95D79D4E-1621-4FF0-976F-83217775F43F.jpg" data-image-captions="Ann Arbor street, Made three snow bears, Went to Gritto for my birthday, Tech Innovation Jam with TinuAI,Law Quad, Taking a picture in front of Leinweber, Snoopy at RallyHouse, Ann Arbor MI, Selfie walking through law Quad, Pizza at Joes PIzza, Snowy day at Law Quad, Cute Squirrel at Law Quad">
-                        <img src="./images/AA/IMG_8738.jpg" alt="Ann Arbor street scene, Michigan">
-                        <div class="card-body">
-                            <h3>Michigan</h3>
-                            <p>Ann Arbor - 08/25 to Present</p>
-                        </div>
-                    </article>
-                    <article class="place-card" tabindex="0" data-country="Chicago" data-city="" data-images="./images/chicago/IMG_2611.jpg, ./images/chicago/IMG_2950.jpg, ./images/chicago/IMG_2617.jpg, ./images/chicago/IMG_3274.jpg, ./images/chicago/IMG_2581.jpg, ./images/chicago/IMG_3265.jpg, ./images/chicago/IMG_3228.jpg, ./images/chicago/100_0274.jpg, ./images/chicago/IMG_3243.jpg, ./images/chicago/IMG_3256.jpg" data-image-captions="The Loop Chicago, Picture at the Riverwalk, The Bean!, P.O.S.H Antique Store, Chicago Theather, Starbucks Reserve Roastery, Au Cheval Hamburgers - So Delicious, Deep Dish Pizza at Giodano's, Doby at Harry Potter Store, Butterbeer at Harry Potter Store in Chicago!">
-                        <img src="./images/chicago/IMG_2617.jpg" alt="Chicago skyline">
-                        <div class="card-body">
-                            <h3>Chicago</h3>
-                            <p>Chicago — Thanksgiving Break 2025</p>
-                        </div>
-                    </article>
-                    <article class="place-card" tabindex="0" data-country="Spain" data-city="Barcelona" data-images="./images/barca.jpg, ./images/barca/IMG_0420.jpeg, ./images/barca/IMG_3410%202.jpeg, ./images/barca/IMG_4337.jpeg, ./images/barca/IMG_5670.jpeg, ./images/barca/IMG_7094.jpeg, ./images/barca/IMG_7985.jpeg, ./images/barca/IMG_8027.jpeg, ./images/barca/IMG_8335.jpeg, ./images/barca/IMG_9184.jpeg, ./images/barca/IMG_9557.jpeg" data-image-captions="Barcelona Sagrada Familia - The unfinsihed Roman Catholic basilica designed by archetect Anotoni Gaudi., Mallorca Boat Trip, Mallorca Beach - Eating a Melon, Candid walk in front of Sagrada Familia, Tapas and Sipping on Sangria, Local tapas, Getting a tattoo in Barcelona for memories!, Cooking Class making pastries, Swimming in the Barcelona ocean, Shakshuka brunch with the girls, Sangria with the girls!">
-                        <img src="./images/barca/IMG_0420.jpeg" alt="Barcelona skyline, Spain">
-                        <div class="card-body">
-                            <h3>Spain</h3>
-                            <p>Barcelona & Mallorca - (06/24/23 to 08/19/23)</p>
-                        </div>
-                    </article>
-                    <article class="place-card" tabindex="0" data-country="France" data-city="Paris" data-images="./images/paris/eiffel.jpg, ./images/paris/IMG_1618.jpeg, ./images/paris/IMG_1679.jpeg, ./images/paris/IMG_1702.jpeg, ./images/paris/IMG_1939.jpeg, ./images/paris/IMG_2012.jpeg, ./images/paris/IMG_2256.jpeg, ./images/paris/IMG_2264.jpeg, ./images/paris/IMG_2554.jpeg, ./images/paris/IMG_2890.jpeg, ./images/paris/IMG_2956.jpeg" data-image-captions="Eiffel Tower Sparkling at midnight, Break time after Monet, Strolls in the park of Paris, Shopping around with Starbucks in front of Louvre, Taking pictures at Versailles, Brunch at Carette, Wall of love, Escargo - So Yummy, Cute pictures in front of Eiffel tower, Sushi for lunch, Street picture with eiffel tower">
-                        <img src="./images/paris/eiffel.jpg" alt="Eiffel Tower, Paris">
-                        <div class="card-body">
-                            <h3>Europe</h3>
-                            <p>Paris - (08/09/24 to 08/13/24)</p>
-                        </div>
-                    </article>
-                    <article class="place-card" tabindex="0" data-country="Thailand" data-city="" data-images="./images/IMG_1629.jpg, ./images/thailand/IMG_0244.jpg, ./images/thailand/IMG_0492.jpg, ./images/thailand/IMG_0618.jpg, ./images/thailand/IMG_1303.jpg, ./images/thailand/IMG_1435.jpg, ./images/thailand/IMG_1687.jpg, ./images/thailand/IMG_1747.jpg, ./images/thailand/IMG_2035.jpg, ./images/thailand/IMG_2080.jpg" data-image-captions="Bangkok street scene with TUKTUK, Selfies with elephants, Pattaya - Beach Pictures, Pattaya - Local Seafood, Wearing Traditional Thai Clotbing, Steak at Bangkok, Authentic Mango Sticky Rice, 0.5 picture at the temple, Last lunch in Thailand, Cafe pictures with Dain">
-                        <img src="./images/IMG_1629.jpg" alt="Street scene in Thailand (Bangkok)">
-                        <div class="card-body">
-                            <h3>Thailand</h3>
-                            <p>Bangkok & Patttaya - (08/05/24 to 08/12/24)</p>
-                        </div>
-                    </article>
-                    <article class="place-card" tabindex="0" data-country="South Korea" data-city="" data-images="./images/korea/IMG_6767.jpg, ./images/korea/IMG_6762.jpg, ./images/korea/IMG_2198.jpg, ./images/korea/IMG_6409.jpeg, ./images/korea/IMG_7717.jpg, ./images/korea/IMG_7947.jpg, ./images/korea/IMG_8296.jpg, ./images/korea/IMG_8354.jpg, ./images/korea/IMG_8446.jpg, ./images/korea/IMG_8687.jpg, ./images/korea/IMG_8855.jpg, ./images/korea/IMG_9107.jpg, ./images/korea/IMG_9373.jpg" data-image-captions="Seoul street view, Busan - Local Food, Busan - Beach Views, Eunchun Hanok Village, Lotte World - Wore student uniforms, Sweet Potato Gnocchi, Salmon Sashimi Noodles, Makgeoli with friends, Traditional korean stew, Sauna with Jade, Suwon - Taking pictures in front of the Wall, Seoul - A very hot day, Acorn Caricature">
-                        <img src="./images/korea/IMG_6767.jpg" alt="Street scene in South Korea (Seoul)">
-                        <div class="card-body">
-                            <h3>South Korea</h3>
-                            <p>Seoul, Busan, Suwon - (06/26/24 to 8/30/24)</p>
-                        </div>
-                    </article>
-                    <article class="place-card" tabindex="0" data-country="Japan" data-city="" data-images="./images/japan/IMG_2646.jpg, ./images/japan/IMG_3064.jpg, ./images/japan/IMG_3286.jpg, ./images/japan/IMG_3328.jpg, ./images/japan/IMG_3644.jpg, ./images/japan/IMG_3765.jpg, ./images/japan/IMG_3886.jpg, ./images/japan/IMG_3980.jpg, ./images/japan/IMG_4409.jpg, ./images/japan/IMG_5123.jpeg, ./images/japan/IMG_5203.jpeg" data-image-captions="Temple gate, Mirro picture in front of cat shrine, Tokyo Lab with Miku, Tokto Planet, Mochi and tea time, 7 flavors of matcha, Japanese Beer YEBISU, Tsukiji Fish Market Tuna Sushi, Ichiran Ramen, Selfie in front of temple, Shibuya crossing">
-                        <img src="./images/japan/IMG_2646.jpg" alt="Temple in Japan">
-                        <div class="card-body">
-                            <h3>Japan</h3>
-                            <p>Tokyo (08/17/24 to 08/27/24)</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="modal-overlay" id="place-modal" aria-hidden="true">
-                    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-                        <div class="modal-media">
-                            <img id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Expanded image of selected place">
-                        </div>
-                        <div class="modal-body">
-                            <div style="display:flex;align-items:center;gap:0.5rem;">
-                                <div>
-                                    <h2 id="modal-title" class="modal-title">
-                                        <span class="visually-hidden">Image title</span>
-                                    </h2>
-                                    <p id="modal-desc" class="modal-desc"></p>
-                                </div>
-                                <button id="modal-close" class="modal-close" aria-label="Close dialog">✕</button>
-                            </div>
-                            <div class="modal-nav">
-                                <button id="modal-prev" aria-label="Previous image">◀</button>
-                                <button id="modal-next" aria-label="Next image">▶</button>
-                                <div class="modal-counter" id="modal-counter"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </main>
 
         <footer class="site-footer">
             <div class="footer-inner">

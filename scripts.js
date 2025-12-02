@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
   updateYear();
   highlightActiveNav();
-  setupPlaceStats();
   setupModal();
   setupSuggestionForm();
 
@@ -26,27 +25,6 @@ function highlightActiveNav() {
       link.setAttribute("aria-current", "page");
     }
   });
-}
-
-function setupPlaceStats() {
-  const statsBox = document.querySelector(".places-stats");
-  if (!statsBox) return;
-
-  const cards = document.querySelectorAll(".place-card");
-
-  const countries = new Set();
-  const cities = new Set();
-
-  cards.forEach(card => {
-    if (card.dataset.country) countries.add(card.dataset.country);
-    if (card.dataset.city) cities.add(card.dataset.city);
-  });
-
-  const countryEl = document.getElementById("countries-count");
-  const cityEl = document.getElementById("cities-count");
-
-  if (countryEl) countryEl.textContent = countries.size;
-  if (cityEl) cityEl.textContent = cities.size;
 }
 
 function setupModal() {
