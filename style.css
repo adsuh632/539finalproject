@@ -734,6 +734,7 @@ main#content.snapshot-section + .site-footer {
   justify-content: center;
   align-items: center;
   border: 1px solid #e78ab433;
+  position: relative;
 }
 
 .white-grid .grid-item strong {
@@ -742,6 +743,58 @@ main#content.snapshot-section + .site-footer {
   line-height: 1;
   color: #1b3550;
   margin-bottom: 0.25rem;
+}
+
+.white-grid .grid-item .tile-image {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 0.4rem;
+  display: block;
+  object-fit: cover;
+}
+
+.white-grid .grid-item.countries,
+.white-grid .grid-item.cities,
+.white-grid .grid-item.trips,
+.white-grid .grid-item.miles,
+.white-grid .grid-item.continents,
+.white-grid .grid-item.airports {
+  border: 1px solid rgba(0,0,0,0.06);
+  color: #ffffff;
+}
+
+.white-grid .grid-item.countries::before,
+.white-grid .grid-item.cities::before,
+.white-grid .grid-item.trips::before,
+.white-grid .grid-item.miles::before,
+.white-grid .grid-item.continents::before,
+.white-grid .grid-item.airports::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.16), rgba(0,0,0,0.16));
+  pointer-events: none;
+}
+
+.white-grid .grid-item.countries strong,
+.white-grid .grid-item.countries div,
+.white-grid .grid-item.cities strong,
+.white-grid .grid-item.cities div,
+.white-grid .grid-item.trips strong,
+.white-grid .grid-item.trips div,
+.white-grid .grid-item.miles strong,
+.white-grid .grid-item.miles div,
+.white-grid .grid-item.continents strong,
+.white-grid .grid-item.continents div,
+.white-grid .grid-item.airports strong,
+.white-grid .grid-item.airports div {
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1;
 }
 
 .white-grid-heading {
