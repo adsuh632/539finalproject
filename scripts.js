@@ -1,6 +1,3 @@
-// NOTES:
-// change the places card to css styling 
-
 document.addEventListener("DOMContentLoaded", function () {
   
   updateYear();
