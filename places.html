@@ -12,7 +12,7 @@
         <nav class="main-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="places.html">Travel</a></li>
+                <li><a href="places.html" class="active" aria-current="page">Travel</a></li>
                 <li><a href="404.html">Gallery</a></li>
                 <li><a href="next.html">Where Next</a></li>
             </ul>
@@ -42,7 +42,6 @@
                 </section>
 
                 <div class="places-cards">
-                    <!-- Place cards moved from index.html -->
                     <article class="place-card" tabindex="0" data-country="USA" data-city="Los Angeles" data-images="./images/la/hollywood.jpg, ./images/la/IMG_5005.jpeg, ./images/la/IMG_6873.jpg, ./images/la/IMG_7523.jpg, ./images/la/IMG_7665.jpg, ./images/la/IMG_7952.jpg, ./images/la/IMG_8033.jpg, ./images/la/IMG_8191.jpg, ./images/la/IMG_8292.jpg" data-image-captions="Hollywood Sign, At Mama Lion - Clubbing with Kimmy in LA, Newspaper stand in Larchmont, Made candles in Culver City, KCON LA 2025, Sunset over LA, Din Tai Fung, Seco my favorite Silverlake Bar, Eating good">
                         <img id="first-place-img" tabindex="-1" src="./images/la/hollywood.jpg" alt="Hollywood Sign, Los Angeles">
                         <div class="card-body">
@@ -106,7 +105,7 @@
                             <img id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Expanded image of selected place">
                         </div>
                         <div class="modal-body">
-                            <div style="display:flex;align-items:center;gap:0.5rem;">
+                            <div class="modal-header-row">
                                 <div>
                                     <h2 id="modal-title" class="modal-title">
                                         <span class="visually-hidden">Image title</span>

@@ -1,30 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   
   updateYear();
-  highlightActiveNav();
   setupModal();
   setupSuggestionForm();
 
 });
 
+// automatically update the year in the footer
 function updateYear() {
   const yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
-}
-
-function highlightActiveNav() {
-  const navLinks = document.querySelectorAll(".main-nav a");
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-  navLinks.forEach(link => {
-    const target = link.getAttribute("href");
-    if (target === currentPage) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    }
-  });
 }
 
 function setupModal() {
