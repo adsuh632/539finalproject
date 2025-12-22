@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateYear();
   setupModal();
   setupSuggestionForm();
+  setupTripPage();
 
 });
 
@@ -167,4 +168,129 @@ function setupSuggestionForm() {
 
     renderList(suggestions.slice().reverse());
   });
+}
+
+// Trip Journal page logic (404.html)
+function setupTripPage() {
+  const tripRoot = document.getElementById("trip-page");
+  if (!tripRoot) return;
+
+  const PHOTOS_KEY = "tripPhotos";
+  const ENTRIES_KEY = "tripEntries";
+
+  const photoInput = document.getElementById("trip-photo-input");
+  const addPhotosBtn = document.getElementById("trip-add-photos");
+  const photosGrid = document.getElementById("trip-photos-grid");
+
+  const journalForm = document.getElementById("trip-journal-form");
+  const journalMsg = document.getElementById("trip-journal-message");
+  const entriesBox = document.getElementById("trip-entries");
+
+  function load(key) {
+    const saved = localStorage.getItem(key);
+    return saved ? JSON.parse(saved) : [];
+  }
+
+  function save(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  let photos = load(PHOTOS_KEY);
+  let entries = load(ENTRIES_KEY);
+
+  function renderPhotos() {
+    photosGrid.innerHTML = "";
+    if (!photos.length) return;
+    photos.forEach((p, idx) => {
+      const item = document.createElement("div");
+      item.className = "photo-item";
+      item.innerHTML = `
+        <img class="photo-thumb" src="${p.src}" alt="Trip photo ${idx + 1}">
+        <div class="photo-actions"><button aria-label="Delete photo">✕</button></div>
+      `;
+      item.querySelector("button").addEventListener("click", () => {
+        photos.splice(idx, 1);
+        save(PHOTOS_KEY, photos);
+        renderPhotos();
+      });
+      photosGrid.appendChild(item);
+    });
+  }
+
+  function renderEntries() {
+    entriesBox.innerHTML = "";
+    if (!entries.length) return;
+    entries.slice().reverse().forEach((e, i) => {
+      const div = document.createElement("div");
+      div.className = "entry";
+      const dateStr = e.date ? new Date(e.date).toLocaleDateString() : new Date(e.created).toLocaleDateString();
+      div.innerHTML = `
+        <div class="entry-header">
+          <strong>Entry</strong>
+          <time>${dateStr}</time>
+          <div class="entry-actions"><button aria-label="Delete entry">Delete</button></div>
+        </div>
+        <div class="entry-body">${escapeHtml(e.text).replace(/\n/g, "<br>")}</div>
+      `;
+      div.querySelector("button").addEventListener("click", () => {
+        const idx = entries.indexOf(e);
+        if (idx > -1) {
+          entries.splice(idx, 1);
+          save(ENTRIES_KEY, entries);
+          renderEntries();
+        }
+      });
+      entriesBox.appendChild(div);
+    });
+  }
+
+  function escapeHtml(s) {
+    return (s || "").replace(/[&<>"']/g, c => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    })[c]);
+  }
+
+  function handleFiles(files) {
+    const fileList = Array.from(files || []);
+    if (!fileList.length) return;
+    let remaining = fileList.length;
+    fileList.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        photos.push({ src: e.target.result, created: Date.now() });
+        remaining -= 1;
+        if (remaining === 0) {
+          save(PHOTOS_KEY, photos);
+          renderPhotos();
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  addPhotosBtn.addEventListener("click", () => photoInput.click());
+  photoInput.addEventListener("change", () => handleFiles(photoInput.files));
+
+  journalForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const date = document.getElementById("trip-date").value;
+    const text = document.getElementById("trip-text").value.trim();
+    if (!text) {
+      journalMsg.textContent = "Please write something for your entry.";
+      return;
+    }
+    entries.push({ date, text, created: Date.now() });
+    save(ENTRIES_KEY, entries);
+    journalMsg.textContent = "Saved.";
+    journalForm.reset();
+    renderEntries();
+  });
+
+  // initial render
+  renderPhotos();
+  renderEntries();
 }

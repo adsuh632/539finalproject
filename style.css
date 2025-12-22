@@ -39,7 +39,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   border-bottom: 1px solid rgba(216,239,224,0.18);
   position: sticky;
   top: 0;
@@ -60,28 +60,32 @@ body {
   display: inline-flex;
   gap: 1rem;
   align-items: center;
+  font-size: 14px;
 }
 
 .main-nav a {
   text-decoration: none;
-  color: rgba(215, 21, 118, 0.949);
+  color: #111111;
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .main-nav a:hover,
 .main-nav a:focus {
-  background-color: rgba(132, 127, 207, 0.12);
+  background-color: rgba(17,17,17,0.06);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(127, 131, 207, 0.12);
+  box-shadow: 0 0 0 3px rgba(17,17,17,0.08);
 }
 
 .main-nav a.active,
 .main-nav a[aria-current="page"] {
-  background: rgba(215, 21, 118, 0.949);
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(231,138,180,0.18);
+  background: transparent;
+  color: #111111;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  box-shadow: none;
 }
 
 main#content {
@@ -93,7 +97,7 @@ main#content {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
+  min-height: 100vh;
   padding: 2rem 1rem;
 }
 
@@ -128,7 +132,7 @@ main#content {
   margin: 0.75rem auto 0;
   max-width: 520px;
   color: rgb(231, 154, 191);
-  font-size: 1.5rem;
+  font-size: 16px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.45);
   font-weight: 400;
   line-height: 1.5;
@@ -302,6 +306,23 @@ main#content {
 .site-footer .footer-inner {
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.new-trip-btn {
+  text-decoration: none;
+  color: #111111;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.new-trip-btn:focus,
+.new-trip-btn:hover {
+  background-color: rgba(17,17,17,0.06);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(17,17,17,0.08);
 }
 
 .site-footer p {
@@ -529,6 +550,13 @@ main#content {
     align-items: stretch;
     text-align: center;
     gap: 0.5rem;
+  }
+
+  .new-trip-btn {
+    position: static;
+    align-self: flex-end;
+    transform: none;
+    margin-top: 0.25rem;
   }
 
   .main-nav ul {
@@ -830,6 +858,144 @@ main#content.snapshot-section + .site-footer {
   scroll-margin-top: 72px;
 }
 
+/* Trip page layout */
+#trip-page h1 {
+  margin: 0 0 0.5rem 0;
+  color: #c71068;
+}
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.trip-photos,
+.trip-journal {
+  background: linear-gradient(180deg, rgba(231,138,180,0.08), rgba(231,138,180,0.04));
+  border: 1px solid rgba(231,138,180,0.16);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.trip-photos h2,
+.trip-journal h2 {
+  margin: 0 0 0.65rem 0;
+  color: #c71068;
+}
+
+.trip-photos-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 0.85rem;
+}
+
+.trip-photos-form input[type="file"] {
+  max-width: 100%;
+  flex: 1 1 260px;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.85rem;
+}
+
+.photo-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.02);
+}
+
+.photo-thumb {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-actions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 6px;
+}
+
+.photo-actions button {
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+
+.journal-form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.journal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: #c71068;
+  font-weight: 600;
+}
+
+.journal-form textarea,
+.journal-form input[type="date"] {
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.12);
+  width: 100%;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.entry {
+  background: rgba(194,24,91,0.04);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(194,24,91,0.22);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.entry-header time {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+
+.entry-actions {
+  margin-left: auto;
+}
+
+.entry-actions button {
+  background: transparent;
+  border: none;
+  color: #c2185b;
+  cursor: pointer;
+}
+
 #travel-snapshot {
   scroll-margin-top: 72px;
 }
@@ -864,7 +1030,7 @@ h1.visually-hidden {
 }
 
 body.hero-bg {
-  background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.20)), var(--bg-image) center/cover no-repeat fixed;
+  background: var(--bg-image) center/cover no-repeat fixed;
 }
 
 .white-grid .grid-item.countries {
